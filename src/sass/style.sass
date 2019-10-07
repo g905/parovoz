@@ -1,0 +1,438 @@
+@import "~bootstrap/scss/bootstrap.scss"
+@import "~aos/dist/aos.css"
+@import "~slick-carousel/slick/slick"
+//@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css"
+
+$font-stack: -apple-system, BlinkMacSystemFont,Ubuntu,'Open Sans','Helvetica Neue',sans-serif
+$font-stack-lato: -apple-system, BlinkMacSystemFont,Lato,'Open Sans','Helvetica Neue',sans-serif
+
+$trans: all .3s ease-in-out
+
+// ====================================== Colors ========================================
+
+$black: #000
+$white: #fff
+$brown: #C89554
+$red: #CE0000
+$lgray: #eee
+$blue: #2B5C87
+$lblue: #3f87c6
+$green: #85C752
+
+$yt: #ff0000
+$fb: #3C5A99
+$in: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)
+$vk: #4c75a3
+$sk: #00AFF0
+$wa: #25D366
+$vi: #665CAC
+
+// ====================================== Typo ==========================================
+
+a
+  color: $black!important
+  opacity: .8
+  &:hover
+    opacity: 1
+
+a.high, .dropdown a
+  text-transform: uppercase
+  color: $blue!important
+
+//@font-face
+  font-family: 'Merriweather'
+  font-style: normal
+  font-weight: 400
+  src: url(../fonts/Merriweather/Merriweather-Regular.ttf)
+
+@font-face
+  font-family: 'Ubuntu'
+  font-style: normal
+  font-weight: 400
+  src: url(../fonts/ubuntu.ttf)
+
+@font-face
+  font-family: 'Lato'
+  font-style: normal
+  font-weight: 400
+  src: url(../fonts/Lato/Lato-Regular.ttf)
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  padding: 0
+  color: $black
+  font-weight: 100
+  letter-spacing: 1px
+  font-family: $font-stack-lato
+
+h1
+  font-size: 60px
+h2
+  font-size: 50px
+h3
+  font-size: 36px
+h4
+  font-size: 20px
+h5
+  font-size: 16px
+h6
+  font-size: 12px
+p
+  margin: 0 0 10px
+b,
+strong
+  font-weight: 700
+
+// ====================================== Common ========================================
+
+body
+  color: $black
+  font-size: .9rem
+  font-family: $font-stack-lato!important
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  background: $lgray
+
+section
+  margin-bottom: 100px
+  overflow: hidden
+#header, #mainmenu, #gallery
+  margin-bottom: 0
+
+ul
+  margin: auto
+  padding: 0
+
+a, nav li a
+  color: $blue
+  transition: $trans
+  &:hover
+    color: $blue
+
+.title
+  //text-transform: uppercase
+  font-weight: bold
+
+.card-hover
+  img
+    transition: all 1s ease-out
+  &:hover
+    img
+      transform: scale(1.1)
+
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+input[type=submit]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus,
+button:focus,
+li:focus,
+.btn:focus,.btn:active
+  outline: none !important
+  box-shadow: none
+
+// ====================================== Selection color ========================
+
+::selection
+  color: $white
+  text-shadow: none
+  background-color: $lblue
+
+// ====================================== Bootstrap reset ========================
+
+.container
+  max-width: 1280px
+.card
+  background: transparent
+  border: unset
+  cursor: pointer
+  overflow: hidden
+  .card-body
+    position: absolute
+    bottom: 0
+.card-text
+  font-size: .9rem
+.navbar-nav li:hover>.dropdown-menu
+  display: block
+.dropdown-menu
+  top: 95%
+
+// ====================================== Loader ==============================
+
+.loader-area
+  background: $white
+  overflow: hidden
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 100000
+  div
+    position: relative
+    top: calc(50% - 25px)
+    left: calc(50% - 25px)
+.spinner-border
+  border-color: $blue
+  border-right-color: transparent
+
+// ====================================== Animated mobile menu =============================
+
+.animated-icon1
+  width: 30px
+  height: 20px
+  position: relative
+  margin: 0px
+  transform: rotate(0deg)
+  transition: .5s ease-in-out
+  cursor: pointer
+
+.animated-icon1 span
+  display: block
+  position: absolute
+  height: 3px
+  width: 100%
+  border-radius: 9px
+  opacity: 1
+  left: 0
+  transform: rotate(0deg)
+  transition: .25s ease-in-out
+
+.animated-icon1 span
+  background: $black
+
+.animated-icon2 span
+  background: $black
+
+.animated-icon3 span
+  background: $black
+
+.animated-icon1 span:nth-child(1)
+  top: 0px
+
+.animated-icon1 span:nth-child(2)
+  top: 10px
+
+.animated-icon1 span:nth-child(3)
+  top: 20px
+
+.animated-icon1.open span:nth-child(1)
+  top: 11px
+  transform: rotate(135deg)
+
+.animated-icon1.open span:nth-child(2)
+  opacity: 0
+  left: -60px
+
+.animated-icon1.open span:nth-child(3)
+  top: 11px
+  transform: rotate(-135deg)
+
+// ====================================== Social Icons =============================
+
+.social-icons li
+  list-style-type: none
+  margin-right: 5px
+  cursor: pointer
+  opacity: .7
+  transition: $trans
+  a
+    color: $black!important
+  &:hover
+    opacity: 1
+  .svg-inline--fa
+    border: 1px solid $black
+    border-radius: 15px
+    padding: 5px
+    min-width: 30px
+    min-height: 30px
+    transition: $trans
+  .fa-youtube
+    &:hover
+      color: $yt
+  .fa-facebook
+    &:hover
+      color: $fb
+  .fa-instagram
+    &:hover
+      background: $in
+      color: $white
+  .fa-vk
+    &:hover
+      color: $vk
+  .fa-skype
+    &:hover
+      color: $sk
+  .fa-whatsapp
+    &:hover
+      color: $wa
+  .fa-viber
+    &:hover
+      background: $vi
+      color: $white
+
+// ====================================== Buttons ==================================
+
+.zavodpr-btn
+  font-size: 14px
+  color: $black
+  background: $green
+  cursor: pointer
+  border-radius: 20px
+  transition: $trans
+  white-space: nowrap
+  opacity: .8
+  max-width: 200px
+  min-width: 200px
+  line-height: 100%
+  padding: 10px
+  &:hover
+    opacity: 1
+
+// ====================================== Slick slider =============================
+
+.slick-slider
+  img
+    width: 500px
+    margin: auto
+
+// ====================================== Slick dots ===============================
+
+.slick-dots
+  display: flex
+  max-width: 40%
+  justify-content: center
+  list-style-type: none
+  padding: 3rem 0 1rem 0
+.slick-dots li button
+  background: $white
+  border-radius: 100%
+  border: unset
+  color: transparent
+  width: 16px
+  height: 16px
+  opacity: .5
+  margin-right: 10px
+.slick-dots li.slick-active
+  outline: none
+  button
+    background: $brown
+    opacity: 1
+
+
+
+// ====================================== SECTIONS =================================
+
+// ====================================== Main menu ================================
+
+#mainmenu
+  width: 100%
+  z-index: 9999
+  overflow: visible
+  background: $white
+  nav
+    li
+      a
+        font-size: .9rem
+        text-transform: uppercase
+
+// ====================================== Header ===================================
+
+#header
+  background: $white
+  border-bottom: 1px solid $blue
+  opacity: 1
+  //height: 110px
+  z-index: 999
+  position: relative
+  //margin-top: 20px
+  .fa-map-marker-alt
+    color: $red
+    font-size: 25px
+  .prsp
+    perspective: 500px
+  .addr-marker
+    animation: addrRotate 4s infinite ease-in
+
+// ==================================== Carousel ===================================
+
+#carousel
+  .item
+    position: relative
+    overflow: hidden
+    min-height: 500px
+    background-size: cover
+    background-position: center
+    .container
+      min-height: 500px
+      padding: 6%
+      color: $white
+      .title
+        text-transform: unset
+        h3
+          font-family: $font-stack
+          color: $white
+          font-weight: bold
+      .content
+        h4
+          color: $white
+  .container.arrows
+    position: relative
+  .slick-arrows
+    position: absolute
+    bottom: 50px
+    right: 50px
+
+    img
+      position: absolute
+      top: -9999px
+      bottom: -9999px
+      left: -9999px
+      right: -9999px
+      margin: auto
+      z-index: -1
+
+// ===================================== Advantages ================================
+#advantages
+  .advantage
+    max-width: 250px
+    margin-bottom: 20px
+    .content
+      margin-top: 10px
+
+// ===================================== Catalog ===================================
+#catalog
+  .catalog-item
+    max-width: 400px
+    position: relative
+    &:hover
+      img
+        transform: scale(1.06) rotate(1deg)
+    img
+      width: 100%
+      height: auto
+      transition: all 3s ease-in-out
+    .card-body
+      position: absolute
+      bottom: 0px
+      padding: 30px
+      h4
+        color: $white
+
+// ====================================== PAGES ====================================
+// ====================================== index ====================================
+.index-ul
+  list-style-type: none
