@@ -83,15 +83,24 @@ b,
 strong
   font-weight: 700
 
+.title
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    font-family: $font-stack
+
 // ====================================== Common ========================================
 
 body
-  color: $white
-  font-size: 1.1rem
+  color: $black
+  font-size: .9rem
   font-family: $font-stack-lato!important
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-  background: $black
+  background: $white
 
 section
   margin-bottom: 100px
@@ -150,7 +159,7 @@ li:focus,
 // ====================================== Bootstrap reset ========================
 
 .container
-  max-width: 1280px
+  //max-width: 1280px
 .card
   background: transparent
   border: unset
@@ -255,11 +264,11 @@ li:focus,
     padding: 5px
     min-width: 30px
     min-height: 30px
-    transition: $trans
 
 // ====================================== Buttons ==================================
 
 .parovoz-btn
+  font-size: .9rem
   text-transform: uppercase
   color: $ice!important
   background: transparent
@@ -270,9 +279,9 @@ li:focus,
   white-space: nowrap
   opacity: .8
   max-width: 200px
-  min-width: 200px
-  line-height: 100%
-  padding: 10px 10px 6px 10px
+  //min-width: 200px
+  //line-height: 100%
+  //padding: 10px 10px 6px 10px
   &:hover
     background: $ice
     color: $black!important
@@ -387,13 +396,47 @@ li:focus,
       margin: auto
       z-index: -1
 
+// ======================================= About ===================================
+#about
+  p
+    text-align: center
+    margin-bottom: 15px
+  ul
+    margin-bottom: 15px
+    li
+      text-align: left
+      margin-bottom: 15px
+
 // ===================================== Advantages ================================
 #advantages
+  .img-left, .img-right
+    img
+      max-width: 600px
   .advantage
-    max-width: 250px
+    max-width: 150px
     margin-bottom: 20px
-    .content
+    p
       margin-top: 10px
+  .bottom
+    height: 100%
+    .content
+      bottom: 0
+
+// ==================================== Form Block =================================
+#formBlock
+  color: $white
+  background-image: url('../img/Главная/Mask%20Group%20(2).png')
+  background-position: center
+  background-size: cover
+  overflow: visible
+  .title
+    color: $white
+  .form-wrap
+    background: $blue
+    opacity: .9
+    position: absolute
+    top: -20px
+    bottom: -20px
 
 // ===================================== Catalog ===================================
 #catalog
