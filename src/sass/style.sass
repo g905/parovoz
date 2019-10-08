@@ -3,21 +3,17 @@
 @import "~slick-carousel/slick/slick"
 //@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css"
 
-$font-stack: -apple-system, BlinkMacSystemFont,Ubuntu,'Open Sans','Helvetica Neue',sans-serif
+$font-stack: -apple-system, BlinkMacSystemFont,Parovoz,'Open Sans','Helvetica Neue',sans-serif
 $font-stack-lato: -apple-system, BlinkMacSystemFont,Lato,'Open Sans','Helvetica Neue',sans-serif
 
 $trans: all .3s ease-in-out
 
 // ====================================== Colors ========================================
 
-$black: #000
+$ice: #1CE8A7
+$blue: #0968D3
+$black: #363636
 $white: #fff
-$brown: #C89554
-$red: #CE0000
-$lgray: #eee
-$blue: #2B5C87
-$lblue: #3f87c6
-$green: #85C752
 
 $yt: #ff0000
 $fb: #3C5A99
@@ -30,14 +26,14 @@ $vi: #665CAC
 // ====================================== Typo ==========================================
 
 a
-  color: $black!important
+  color: $white!important
   opacity: .8
   &:hover
     opacity: 1
 
 a.high, .dropdown a
   text-transform: uppercase
-  color: $blue!important
+  color: $black!important
 
 //@font-face
   font-family: 'Merriweather'
@@ -46,10 +42,10 @@ a.high, .dropdown a
   src: url(../fonts/Merriweather/Merriweather-Regular.ttf)
 
 @font-face
-  font-family: 'Ubuntu'
+  font-family: 'Parovoz'
   font-style: normal
   font-weight: 400
-  src: url(../fonts/ubuntu.ttf)
+  src: url('../fonts/TT Walls Rough Bold DEMO.otf')
 
 @font-face
   font-family: 'Lato'
@@ -90,12 +86,12 @@ strong
 // ====================================== Common ========================================
 
 body
-  color: $black
-  font-size: .9rem
+  color: $white
+  font-size: 1.1rem
   font-family: $font-stack-lato!important
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-  background: $lgray
+  background: $black
 
 section
   margin-bottom: 100px
@@ -149,7 +145,7 @@ li:focus,
 ::selection
   color: $white
   text-shadow: none
-  background-color: $lblue
+  background-color: $ice
 
 // ====================================== Bootstrap reset ========================
 
@@ -186,7 +182,7 @@ li:focus,
     top: calc(50% - 25px)
     left: calc(50% - 25px)
 .spinner-border
-  border-color: $blue
+  border-color: $ice
   border-right-color: transparent
 
 // ====================================== Animated mobile menu =============================
@@ -247,12 +243,12 @@ li:focus,
   list-style-type: none
   margin-right: 5px
   cursor: pointer
-  opacity: .7
   transition: $trans
   a
     color: $black!important
   &:hover
-    opacity: 1
+    a
+      color: $ice!important
   .svg-inline--fa
     border: 1px solid $black
     border-radius: 15px
@@ -260,37 +256,15 @@ li:focus,
     min-width: 30px
     min-height: 30px
     transition: $trans
-  .fa-youtube
-    &:hover
-      color: $yt
-  .fa-facebook
-    &:hover
-      color: $fb
-  .fa-instagram
-    &:hover
-      background: $in
-      color: $white
-  .fa-vk
-    &:hover
-      color: $vk
-  .fa-skype
-    &:hover
-      color: $sk
-  .fa-whatsapp
-    &:hover
-      color: $wa
-  .fa-viber
-    &:hover
-      background: $vi
-      color: $white
 
 // ====================================== Buttons ==================================
 
-.zavodpr-btn
-  font-size: 14px
-  color: $black
-  background: $green
+.parovoz-btn
+  text-transform: uppercase
+  color: $ice!important
+  background: transparent
   cursor: pointer
+  border: 1px solid $ice
   border-radius: 20px
   transition: $trans
   white-space: nowrap
@@ -298,9 +272,16 @@ li:focus,
   max-width: 200px
   min-width: 200px
   line-height: 100%
-  padding: 10px
+  padding: 10px 10px 6px 10px
   &:hover
+    background: $ice
+    color: $black!important
     opacity: 1
+.btn-blue
+  background: $blue
+  color: $white!important
+  border: unset
+
 
 // ====================================== Slick slider =============================
 
@@ -329,7 +310,7 @@ li:focus,
 .slick-dots li.slick-active
   outline: none
   button
-    background: $brown
+    background: $black
     opacity: 1
 
 
@@ -348,11 +329,12 @@ li:focus,
       a
         font-size: .9rem
         text-transform: uppercase
+        color: $black
 
 // ====================================== Header ===================================
 
 #header
-  background: $white
+  background-image: url('../img/Главная/Group%2080.png')
   border-bottom: 1px solid $blue
   opacity: 1
   //height: 110px
@@ -382,13 +364,13 @@ li:focus,
       color: $white
       .title
         text-transform: unset
-        h3
+        h2
           font-family: $font-stack
           color: $white
-          font-weight: bold
       .content
-        h4
-          color: $white
+        h3
+          color: $white!important
+          font-weight: bold
   .container.arrows
     position: relative
   .slick-arrows

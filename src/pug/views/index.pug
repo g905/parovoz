@@ -1,25 +1,10 @@
-mixin page(href, title)
-    li
-        h3
-            a.high(href=href)=title
-doctype html
+extends ../includes/layout
 
-html(lang="ru")
-    include ../includes/head
-    body
-        include ../includes/loader
-        .container.mt-5
-            ul.index-ul
-                +page("main.html", "Главная")
-            //-ul
-                +page("main.html", "Главная")
-                +page("about.html", "О клубе")
-                +page("privileges.html", "Привилегии")
-                +page("menu.html", "Меню клуба")
-                +page("vacancies.html", "Вакансии")
-                +page("gallery.html", "Галерея")
-                +page("album.html", "Альбом")
-                +page("afisha.html", "Афиша")
-                +page("news.html", "Новости")
-                +page("news-detail.html", "Новость")
-                +page("contacts.html", "Контакты")
+block content
+    include ../includes/carousel
+    //include ../includes/advantages
+    //include ../includes/catalog
+    //include ../includes/complete_solutions
+    //include ../includes/feedback
+    //include ../includes/about
+    //include ../includes/team

@@ -3,21 +3,32 @@ section#header.py-2.d-none.d-lg-block
     .container
         .header-wrap
             .row.d-flex.justify-content-between.align-items-center
-                .col-3
-                    .address.text-left.d-flex.align-items-center.prsp
-                        .addr Волоколамское Шоссе,<br>д. 116, офис 438
-                .col-6
-                    .contacts.d-flex.justify-content-around
-                        .request-price
-                            a.high(href="#") Запросить прайс
-                        .email
-                            a(href="mailto:login@gmail.com") login@gmail.com
-                        .tel
-                            a(href="tel:+79128577186") +79128577186
-                        .request-callback
-                            a.high(href="#") Заказать звонок
-                .col-3
+                .col-4
+                    .address.text-left.d-flex.align-items-center.prsp.mb-3
+                        .addr-marker.mr-3
+                            i.fas.fa-map-marker-alt
+                        .addr Удмуртия, г. Ижевск<br>ул. Ижевская 2
                     .social-icons.d-none.d-lg-block
+                        ul.d-flex.justify-content-around
+                            each icon in icons
+                                li
+                                    a
+                                        i.fab(class=icon)
+                .col-4
+                    .logo.text-center
+                        img.img-fluid(src="img/Главная/logo.svg.png")
+                .col-2.text-right
+                    .email.mb-3
+                        a(href="mailto:login@gmail.com") login@gmail.com
+                    .get-audit
+                        a.btn.parovoz-btn(href="#") Получить аудит
+                .col-2.text-right
+                    .tel.mb-3
+                        a(href="tel:+79128577186") +79128577186
+                    .request-callback
+                        a.btn.parovoz-btn(href="#") Заказать звонок
+
+                    //.social-icons.d-none.d-lg-block
                         ul.d-flex.justify-content-end
                             each icon in icons
                                 li
